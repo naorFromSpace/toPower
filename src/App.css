@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+nav{
+    background-color:#f2fcff;
+}
+li{
+    margin: 30px;
+}
+#Social_media_footer{
+    background-color:#f2fcff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main{
+    margin-top :30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px auto;
+    
+    font-style: italic;
+    font-variant: normal;
+    text-transform: capitalize;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 1s box-shadow;
+    border-radius: 20px;
+    padding: 10px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  a:hover {
+    box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
   }
-  to {
-    transform: rotate(360deg);
+  
+  a:hover:after {
+    animation: 1.3s counterclockwise infinite;
   }
-}
+  
+
+
+
+ 
+
+  @media screen and (max-width: 600px) {
+    a { 
+        font-size: 12px;
+    }
+    li{
+        margin: 5px;
+        letter-spacing:-1px;
+    } 
+   
+  }
+
+
+

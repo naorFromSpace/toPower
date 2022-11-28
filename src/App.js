@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+ 
+import { useState } from 'react';
 import './App.css';
+import AppRoutes from './appRoutes';
+import { Appcontext } from './component/users';
 
 function App() {
+  
+let [users,setusers] = useState([])
+const showConsole = () => {
+      if(users[users.length-1]==='student'){
+        
+      }
+  alert("all work fine")
+}
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Appcontext.Provider value = {
+      {
+            users,
+            setusers,
+           showConsole    
+      }
+    }>
+      <div className="App">
+        <AppRoutes />
+      </div>
+    </Appcontext.Provider>
   );
 }
 

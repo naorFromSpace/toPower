@@ -1,0 +1,170 @@
+
+
+
+.containerMini{
+    height:180px;
+    width  :400px;
+    background-color:#ffffff;
+    border-radius:8px;
+    box-shadow:20px 20px 40px rgba(60,60,150,0.25)  ;
+    display:grid;
+    place-items:center;
+    margin-bottom: 60px;
+    margin-top: 10px;
+    display: flex; 
+}
+
+
+.indicator{
+    height:160px;
+    width  :40px;
+    border-radius:8px;
+    background-color:#23c51e;
+    margin-left: 40px;
+
+}
+
+/* ---wow------wow---wow---wow---wow---wow---wow---wow */
+.wow {
+
+
+    box-shadow:20px 20px 40px rgba(60,60,150,0.25)  ;
+    display:grid;
+    place-items:center;
+
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 20px auto;
+    width: 400px;
+    height: 400px;
+    background: white;
+    border-radius: 75px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+    padding: 20px;
+    margin-bottom: 60px;
+  }
+  
+  .wow:hover {
+    box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  }
+  
+  .wow:hover::before, .wow:hover::after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #6b5fd8;
+    border-radius: 75px;
+    z-index: -1;
+    animation: 1s clockwise infinite;
+  }
+  
+  .wow:hover:after {
+    background: #e8fc36;
+    animation: 2s counterclockwise infinite;
+  }
+  
+  @keyframes clockwise {
+    0% {
+      top: -5px;
+      left: 0;
+    }
+    12% {
+      top: -2px;
+      left: 2px;
+    }
+    25% {
+      top: 0;
+      left: 5px;    
+    }
+    37% {
+      top: 2px;
+      left: 2px;
+    }
+    50% {
+      top: 5px;
+      left: 0;    
+    }
+    62% {
+      top: 2px;
+      left: -2px;
+    }
+    75% {
+      top: 0;
+      left: -5px;
+    }
+    87% {
+      top: -2px;
+      left: -2px;
+    }
+    100% {
+      top: -5px;
+      left: 0;    
+    }
+  }
+  
+  @keyframes counterclockwise {
+    0% {
+      top: -5px;
+      right: 0;
+    }
+    12% {
+      top: -2px;
+      right: 2px;
+    }
+    25% {
+      top: 0;
+      right: 5px;    
+    }
+    37% {
+      top: 2px;
+      right: 2px;
+    }
+    50% {
+      top: 5px;
+      right: 0;    
+    }
+    62% {
+      top: 2px;
+      right: -2px;
+    }
+    75% {
+      top: 0;
+      right: -5px;
+    }
+    87% {
+      top: -2px;
+      right: -2px;
+    }
+    100% {
+      top: -5px;
+      right: 0;    
+    }
+  }
+
+
+  /* ---bt wow----------------- */
+
+  h2 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(rgb(234, 245, 78), rgb(99, 97, 206));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+
+  h6 {
+    font-size: 30px;
+    background: -webkit-linear-gradient(rgb(234, 245, 78), rgb(99, 97, 206));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
