@@ -34,7 +34,7 @@ export default function PrintListOfCourses(props){
                 </div> 
                 <p className="card-text d-flex justify-content-around">
                     <small className="text-muted">price : {cours.price}</small>
-                    <Link className="btn btn-info mt-3 mb-1" to={"./AboutCourse/" + i}>Link</Link>
+                    <Link className="btn btn-info mt-3 mb-1" to={"/AboutCourse/" + i}>Link</Link>
                 </p>
                 </div>
             </div>

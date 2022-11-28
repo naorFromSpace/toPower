@@ -1,4 +1,3 @@
-
 import PrintListOfCourses from '../list of courses/print_list_of_courses'
 import Navbar from '../navber'
  import Footer from '../footer'
@@ -16,11 +15,7 @@ export default function MainPage(props){
      {
       name:'products',
       link:'/AppProduct'
-    },
-    {
-      name:'log in',
-      link:'/Login' 
-    },
+    }
   ] 
   
   useEffect(() => {
@@ -45,10 +40,12 @@ export default function MainPage(props){
           'content-type': "application/json"
         }
       })
-      if (resp.data.usertype === "student")
-      navigate('/registermainpage');
-      else if (resp.data.usertype === "teacher")
-      navigate('/TeacherMainPage');
+
+      console.log(resp.data.paid);
+     
+      if (resp.data.paid === true) {
+        navigate('/MainStudentPage')
+      }
 
     }
 

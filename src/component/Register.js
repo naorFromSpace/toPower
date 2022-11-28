@@ -39,11 +39,10 @@ function Register() {
                 data: _body
 
             })
-            console.log(resp.data)
-            if (resp.data.usertype === "student")
-            navigate('/MainStudentPage')
-           else if (resp.data.usertype === "teacher")
-            navigate('/TeacherMainPage')
+            alert("please Login")
+            navigate('/login')
+           
+         
 
         }
 
@@ -81,7 +80,7 @@ function Register() {
                 </select>
                 {errors.gender && <div className='text-danger d-block'>Required</div>}
                 <label>User Type:</label>
-                <select {...register("type", { required: true })} className="form-select">
+                <select {...register("usertype", { required: true })} className="form-select">
                     <option value=""></option>
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>

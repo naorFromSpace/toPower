@@ -12,6 +12,9 @@ import { AppProduct } from './component/productsComps/appProduct';
 import { MovieInfo } from './component/productsComps/productInfo';
 import About_cours from './component/list of courses/about_cours';
 import Pay from './component/list of courses/pay';
+import ThankYou from './component/ThankYou';
+import RegisterMainPage from './component/main_page/RegisterMainPage'
+
 
 function AppRoutes() {
     return (
@@ -30,6 +33,8 @@ function AppRoutes() {
                 <Route path="/AppProduct" element={<AppProduct/>}></Route>
                 <Route path="/AppProduct/info/:id" element={<MovieInfo/>}></Route>
                 <Route path="/Pay" element={<Pay/>}></Route>
+                <Route path="/thankyou" element={<ThankYou/>}></Route>
+                <Route path="/registermainpage" element={<RegisterMainPage/>}></Route>
             </Routes>
         </BrowserRouter>
     )

@@ -47,11 +47,11 @@ function Login() {
             console.log(resp.data.user.usertype)
             localStorage.setItem("user",resp.data.token);
             if (resp.data.user.usertype === "student"){
-            navigate('/MainStudentPage');
+            navigate('/');
             
         }
         else if (resp.data.user.usertype === "teacher"){
-            navigate('/TeacherMainPage');
+            navigate('/');
             
         }
         }

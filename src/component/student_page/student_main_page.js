@@ -15,10 +15,6 @@ export default function MainStudentPage(props){
   }
 
   const nav_list=[
-    {
-     name:'mein page',
-     link:'/'                 
-     },
      {
       name:'products',
       link:'#'
@@ -32,7 +28,7 @@ export default function MainStudentPage(props){
         link:'/YourAccunt' 
       },
       {
-        name:'messeg',
+        name:'messege',
         link:'#' 
       },
      
