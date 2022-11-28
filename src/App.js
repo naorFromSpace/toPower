@@ -11,7 +11,7 @@ const showConsole = () => {
       if(users[users.length-1]==='student'){
         
       }
-  alert("all work fine")
+  alert("all work not  fine")
 }
 
 
