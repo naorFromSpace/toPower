@@ -25,7 +25,7 @@ function AppRoutes() {
                 <Route path="/MainStudentPage" element={<MainStudentPage/>}></Route>
                 <Route path="/ProgressMainCard " element={<ProgressMainCard />}></Route>
                 <Route path="/TeacherMainPage" element={<TeacherMainPage />}></Route>
-                <Route path="/AboutStudent" element={<AboutStudent />}></Route>
+                <Route path="/AboutStudent/:email" element={<AboutStudent />}></Route>
                 <Route path="/Login" element={<Login />}></Route>
                 <Route path="/register" element={<Register/>}></Route>
                 <Route path="/YourAccunt" element={<YourAccunt/>}></Route>
