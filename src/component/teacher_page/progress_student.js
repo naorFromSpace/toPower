@@ -23,6 +23,11 @@ const setNow = () => {
 
    props.setprogression(progressRef.current.value);
    props.setlessonNumber(lessonRef.current.value);
+   props.sendServer({
+
+      progression:progressRef.current.value,
+      lessonNumber:lessonRef.current.value
+   });
 
 }
     

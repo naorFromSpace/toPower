@@ -3,7 +3,8 @@ import Navbar from '../navber';
 import Determination from '../student_page/determination_and_cancellation';
 import ProgressStodent from "./progress_student"
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
+import axios from 'axios';
 
 
 
@@ -27,6 +28,55 @@ export default function AboutStudent() {
 
   }
 
+  const sendServer = async(_body) => {
+    let url = "http://localhost:3001/user/Edit/" + email;
+    try {
+        let resp = await axios({
+            url,
+            method: "PUT",
+            data: _body
+
+        })
+     
+        
+    }
+    
+    catch (err) {
+        console.log(err)
+        alert("failed to upload")
+    }
+
+  }
+
+
+  useEffect(() => {
+
+    doApi();
+
+  },[])
+
+
+const doApi = async() => {
+
+  let url = "http://localhost:3001/user/" + email;
+  try {
+      let resp = await axios({
+          url,
+          method: "GET",
+
+      })
+   
+      setprogression(resp.data[0].progression)
+      setlessonNumber(resp.data[0].lessonNumber)
+    
+  }
+  
+  catch (err) {
+      console.log(err)
+      alert("failed to upload")
+  }
+
+}
 
 
   const nav_list = [
@@ -54,7 +104,7 @@ export default function AboutStudent() {
       <Navbar nav_list={nav_list} />
       <div className='row' style={main_container}>
         <Determination />
-        <ProgressStodent progression = {progression} setprogression = {setprogression} lessonNumber = {lessonNumber} setlessonNumber = {setlessonNumber}/>
+        <ProgressStodent progression = {progression} setprogression = {setprogression} lessonNumber = {lessonNumber} setlessonNumber = {setlessonNumber}  sendServer = {sendServer} />
 
       </div>
       <Footer />

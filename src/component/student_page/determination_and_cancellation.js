@@ -3,6 +3,9 @@ import styles from './mystyle.module.css';
 
 export default function Determination() {
 
+
+    
+
     return(
         <div className={styles.wow} >
                     <div className='container '>
