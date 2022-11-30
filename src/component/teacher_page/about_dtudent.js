@@ -2,13 +2,14 @@ import Footer from '../footer';
 import Navbar from '../navber';
 import Determination from '../student_page/determination_and_cancellation';
 import ProgressStodent from "./progress_student"
-import { useParams } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useState ,useEffect} from 'react';
 import axios from 'axios';
 
 
 
 export default function AboutStudent() {
+  const navigate = useNavigate();
   const params = useParams();
   let email = params.email;
   let [progression,setprogression] = useState(0);
@@ -38,7 +39,7 @@ export default function AboutStudent() {
             data: _body
 
         })
-     
+        
         
     }
     
@@ -59,7 +60,9 @@ console.log(_body);
             data: _body
 
         })
+        Navigate("/");
      console.log(resp.data)
+     
         
     }
     

@@ -1,12 +1,12 @@
 import styles from './mystyle.module.css';
 import { useRef, useEffect, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const from = "16:00";
 const to = "20:00"
 export default function Determinationstudent(props) {
-
-
+    const navigate = useNavigate();
     let time = "";
     let prvtime = [];
     let dateRef = useRef();
@@ -14,20 +14,20 @@ export default function Determinationstudent(props) {
 
     const setLesson = () => {
         if (timeRef.current.value < from || timeRef.current.value > to) {
-           alert("from 16:00 to 20:00")
+            alert("from 16:00 to 20:00")
             return;
         }
-        if (dateRef.current.value < "2021"|| dateRef.current.value > "2030") {
+        if (dateRef.current.value < "2021" || dateRef.current.value > "2030") {
             alert("not right date")
-             return;
-         }
+            return;
+        }
 
         time = dateRef.current.value + " " + timeRef.current.value;
         prvtime.push(time);
         props.sendLesson({
             next_Lesson: prvtime
         })
-        console.log(prvtime)
+        // console.log(prvtime)
     }
 
     useEffect(() => {
@@ -47,7 +47,7 @@ export default function Determinationstudent(props) {
 
             })
             prvtime = resp.data[0].next_Lesson;
-          console.log(prvtime)
+            //   console.log(prvtime)
 
         }
 

@@ -6,13 +6,16 @@ import LessonTime from './LessonTime'
 import Progress from './progress'
 import axios from 'axios'
 import { useEffect,useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 
 
 export default function MainStudentPage(props) {
+  const navigate = useNavigate();
   let [progression,setprogression] = useState()
   let [email,setemail] = useState();
   let [avilDate,setavilDate] = useState([]);
+  // let prvtime = [];
   const main_container = {
     justifyContent: 'space-around',
     margin: 'auto',
@@ -90,6 +93,7 @@ export default function MainStudentPage(props) {
     
             })
          console.log(resp.data)
+         navigate("/");
             
         }
         
@@ -113,7 +117,7 @@ export default function MainStudentPage(props) {
         <Determinationstudent email = {email} sendLesson  = {sendLesson }/>
         <Progress  progression ={progression}/>
         
-          <LessonTime avilDate = {avilDate}/>
+          <LessonTime avilDate = {avilDate} email = {email}/>
        
       </div>
 

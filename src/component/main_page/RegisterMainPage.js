@@ -1,17 +1,14 @@
 import PrintListOfCourses from '../list of courses/print_list_of_courses'
 import Navbar from '../navber'
  import Footer from '../footer'
- import { useEffect } from 'react'
+ import { useEffect ,useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 export default function MainPage(props){
   const navigate = useNavigate();
+  
   const nav_list=[
-    {
-     name:'Our courses',
-     link:'/TeacherMainPage'                 
-     },
      {
       name:'products',
       link:'/AppProduct'
