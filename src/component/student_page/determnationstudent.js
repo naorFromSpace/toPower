@@ -17,6 +17,11 @@ export default function Determinationstudent(props) {
            alert("from 16:00 to 20:00")
             return;
         }
+        if (dateRef.current.value < "2021"|| dateRef.current.value > "2030") {
+            alert("not right date")
+             return;
+         }
+
         time = dateRef.current.value + " " + timeRef.current.value;
         prvtime.push(time);
         props.sendLesson({

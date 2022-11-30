@@ -32,7 +32,7 @@ export default function Progress(props){
         <h6>you completed</h6>
             <div style={circular_progress}>
                 <div style={value_container}>
-                    <h2 >{props.progression}</h2>
+                    <h2 >{props.progression}%</h2>
                 </div>
             </div>
             <h6>from the course</h6>
