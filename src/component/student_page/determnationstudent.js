@@ -2,8 +2,9 @@ import styles from './mystyle.module.css';
 import { useRef, useEffect, useState } from 'react';
 import axios from 'axios';
 
-
-export default function Determination(props) {
+const from = "16:00";
+const to = "20:00"
+export default function Determinationstudent(props) {
 
 
     let time = "";
@@ -11,14 +12,17 @@ export default function Determination(props) {
     let dateRef = useRef();
     let timeRef = useRef();
 
-
     const setLesson = () => {
+        if (timeRef.current.value > from || timeRef.current.value < to) {
+           alert("from 16:00 to 20:00")
+            return;
+        }
         time = dateRef.current.value + " " + timeRef.current.value;
         prvtime.push(time);
         props.sendLesson({
             next_Lesson: prvtime
         })
-        console.log( prvtime)
+        console.log(prvtime)
     }
 
     useEffect(() => {
@@ -37,14 +41,14 @@ export default function Determination(props) {
                 method: "GET",
 
             })
-          prvtime = resp.data[0].next_Lesson
+            prvtime = resp.data[0].next_Lesson;
           console.log(prvtime)
 
         }
 
         catch (err) {
             console.log(err)
-            alert("failed to get")
+            // alert("failed to get")
         }
 
     }

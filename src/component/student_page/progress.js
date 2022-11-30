@@ -1,10 +1,10 @@
 import styles from './mystyle.module.css'; 
+import { useState } from 'react';
 
 
 
-export default function Progress(){
+export default function Progress(props){
 
-    
    const circular_progress={
     position:'relative',
     height:'250px',
@@ -32,7 +32,7 @@ export default function Progress(){
         <h6>you completed</h6>
             <div style={circular_progress}>
                 <div style={value_container}>
-                    <h2 >10%</h2>
+                    <h2 >{props.progression}</h2>
                 </div>
             </div>
             <h6>from the course</h6>
