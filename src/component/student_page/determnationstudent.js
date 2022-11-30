@@ -13,7 +13,7 @@ export default function Determinationstudent(props) {
     let timeRef = useRef();
 
     const setLesson = () => {
-        if (timeRef.current.value > from || timeRef.current.value < to) {
+        if (timeRef.current.value < from || timeRef.current.value > to) {
            alert("from 16:00 to 20:00")
             return;
         }
