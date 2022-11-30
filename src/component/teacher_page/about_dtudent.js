@@ -14,6 +14,7 @@ export default function AboutStudent() {
   let [progression,setprogression] = useState(0);
   let [lessonNumber,setlessonNumber] = useState(0);
 
+
   const card_style = {
     width: "450px",
     padding: '15px',
@@ -48,9 +49,33 @@ export default function AboutStudent() {
 
   }
 
+  const sendLesson = async (_body) => {
+console.log(_body);
+    let url = "http://localhost:3001/user/Edit/" + email;
+    try {
+        let resp = await axios({
+            url,
+            method: "PUT",
+            data: _body
+
+        })
+     console.log(resp.data)
+        
+    }
+    
+    catch (err) {
+        console.log(err)
+        alert("failed to upload")
+    }
+
+
+
+  }
+
 
   useEffect(() => {
 
+    console.log("about student")
     doApi();
 
   },[])
@@ -103,7 +128,7 @@ const doApi = async() => {
     <div>
       <Navbar nav_list={nav_list} />
       <div className='row' style={main_container}>
-        <Determination />
+        <Determination  sendLesson = {sendLesson} email = {email}/>
         <ProgressStodent progression = {progression} setprogression = {setprogression} lessonNumber = {lessonNumber} setlessonNumber = {setlessonNumber}  sendServer = {sendServer} />
 
       </div>
