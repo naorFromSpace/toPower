@@ -7,6 +7,20 @@ const from = "16:00";
 const to = "20:00"
 export default function Determinationstudent(props) {
     const navigate = useNavigate();
+    let validmonth;
+    let validday;
+    let dt = new Date();
+    if (dt.getDate() < 10)
+        validday = "0" + (dt.getDate()).toString();
+    else
+        validday = dt.getDate();
+    if (dt.getMonth() + 1 < 10)
+        validmonth = "0" + (dt.getMonth() + 1).toString();
+    else
+     validmonth = dt.getMonth() + 1;
+    let validyear = dt.getFullYear()
+    let valid = validyear.toString() + "-" + (validmonth.toString()) + "-" + validday.toString();
+    console.log(valid);
     let time = "";
     let prvtime = [];
     let dateRef = useRef();
@@ -17,7 +31,7 @@ export default function Determinationstudent(props) {
             alert("from 16:00 to 20:00")
             return;
         }
-        if (dateRef.current.value < "2021" || dateRef.current.value > "2030") {
+        if (dateRef.current.value < valid || dateRef.current.value > "2030") {
             alert("not right date")
             return;
         }

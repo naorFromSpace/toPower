@@ -26,23 +26,20 @@ export default function MainStudentPage(props) {
   const nav_list = [
     {
       name: 'products',
-      link: '#'
+      link: '/AppProduct'
     },
-    {
-      name: 'your progress',
-      link: '/ProgressMainCard'
-    },
+    // {
+    //   name: 'your progress',
+    //   link: '/ProgressMainCard'
+    // },
     {
       name: 'your account',
       link: '/YourAccunt'
     },
     {
       name: 'messege',
-      link: '#'
+      link: '/messege'
     },
-
-
-
   ]
 
 

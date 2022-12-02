@@ -32,14 +32,14 @@ let [youare,setyouare] = useState();
       name: 'main mapg',
       link: '/'
     },
-    {
-      name: 'products',
-      link: '#'
-    },
-    {
-      name: 'log in',
-      link: '/Login'
-    },
+    // {
+    //   name: 'products',
+    //   link: '#'
+    // },
+    // {
+    //   name: 'log in',
+    //   link: '/Login'
+    // },
   ]
   console.log(youare);
 

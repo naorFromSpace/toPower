@@ -50,18 +50,12 @@ function Pay() {
 
 
   const nav_list = [
-    {
-      name: 'Our courses',
-      link: '/TeacherMainPage'
-    },
+   
     {
       name: 'products',
       link: '/AppProduct'
     },
-    {
-      name: 'log in',
-      link: '/Login'
-    },
+     
   ]
 
   const card_style = {

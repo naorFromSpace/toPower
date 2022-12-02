@@ -2,9 +2,11 @@ import Footer from '../footer';
 import Navbar from '../navber';
 import Determination from '../student_page/determination_and_cancellation';
 import ProgressStodent from "./progress_student"
+import LessonForStudent from "./LessonForStudent"
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { useState ,useEffect} from 'react';
 import axios from 'axios';
+
 
 
 
@@ -14,6 +16,7 @@ export default function AboutStudent() {
   let email = params.email;
   let [progression,setprogression] = useState(0);
   let [lessonNumber,setlessonNumber] = useState(0);
+  let [avilDate,setavilDate] = useState([]);
 
 
   const card_style = {
@@ -51,7 +54,7 @@ export default function AboutStudent() {
   }
 
   const sendLesson = async (_body) => {
-console.log(_body);
+    
     let url = "http://localhost:3001/user/Edit/" + email;
     try {
         let resp = await axios({
@@ -60,9 +63,7 @@ console.log(_body);
             data: _body
 
         })
-        Navigate("/");
-     console.log(resp.data)
-     
+        window.location.reload(false);
         
     }
     
@@ -78,7 +79,6 @@ console.log(_body);
 
   useEffect(() => {
 
-    console.log("about student")
     doApi();
 
   },[])
@@ -96,7 +96,7 @@ const doApi = async() => {
    
       setprogression(resp.data[0].progression)
       setlessonNumber(resp.data[0].lessonNumber)
-    
+      setavilDate(resp.data[0].next_Lesson)
   }
   
   catch (err) {
@@ -112,18 +112,15 @@ const doApi = async() => {
       name: 'mein page',
       link: '/'
     },
-    {
-      name: 'add products',
-      link: '#'
-    },
+    // {
+    //   name: 'add products',
+    //   link: '#'
+    // },
     {
       name: 'your account',
       link: '/YourAccunt'
     },
-    {
-      name: 'messeg',
-      link: '#'
-    },
+   
   ]
 
 
@@ -133,7 +130,7 @@ const doApi = async() => {
       <div className='row' style={main_container}>
         <Determination  sendLesson = {sendLesson} email = {email}/>
         <ProgressStodent progression = {progression} setprogression = {setprogression} lessonNumber = {lessonNumber} setlessonNumber = {setlessonNumber}  sendServer = {sendServer} />
-
+        <LessonForStudent   avilDate = {avilDate}  email = {email}/>
       </div>
       <Footer />
     </div>

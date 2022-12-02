@@ -14,6 +14,8 @@ import About_cours from './component/list of courses/about_cours';
 import Pay from './component/list of courses/pay';
 import ThankYou from './component/ThankYou';
 import RegisterMainPage from './component/main_page/RegisterMainPage'
+import Messegesjs from './component/messegesjs';
+import MessegesTeacher from './component/messegeTeacher';
 
 
 function AppRoutes() {
@@ -35,6 +37,8 @@ function AppRoutes() {
                 <Route path="/Pay" element={<Pay/>}></Route>
                 <Route path="/thankyou" element={<ThankYou/>}></Route>
                 <Route path="/registermainpage" element={<RegisterMainPage/>}></Route>
+                <Route path='/messege' element={<Messegesjs/>}></Route>
+                <Route path ='/messegestudent/:email' element = {<MessegesTeacher/>}></Route>
             </Routes>
         </BrowserRouter>
     )

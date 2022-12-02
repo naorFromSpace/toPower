@@ -11,7 +11,7 @@ export default function MainPage(props){
   const nav_list=[
     {
      name:'Our courses',
-     link:'/TeacherMainPage'                 
+     link:'/'                 
      },
      {
       name:'products',

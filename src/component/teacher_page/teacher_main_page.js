@@ -27,18 +27,18 @@ export default function TeacherMainPage() {
       name: 'main page',
       link: '/'
     },
-    {
-      name: 'add products',
-      link: '#'
-    },
+    // {
+    //   name: 'add products',
+    //   link: '#'
+    // },
     {
       name: 'your account',
       link: '/YourAccunt'
     },
-    {
-      name: 'messege',
-      link: '#'
-    },
+    // {
+    //   name: 'messege',
+    //   link: '/messege'
+    // },
   ]
 
 
@@ -73,7 +73,8 @@ let list = Ar.map((item,i) => {
   return(
        <div className="mb-5" style={card_style} >
           <Link to={"/AboutStudent/" + item.email} className="card-title" style={{ textDecoration: 'none' }}>{item.name} {item.email}</Link>
-          <Link to={"/AboutStudent/" + item.email} className="btn mt-3" style={{ backgroundColor: '#b2fcf1' }}>Button</Link>
+          <Link to={"/AboutStudent/" + item.email} className="btn mt-3" style={{ backgroundColor: '#b2fcf1' }}>Set Student</Link>
+          <Link to={"/messegestudent/" + item.email} className="btn mt-3 ms-1" style={{ backgroundColor: '#b2fcf1' }}>Text Student</Link>
         </div> 
       )
     })
